@@ -11,7 +11,7 @@
 <br>
 
 ### Click [here](https://codepen.io/orbitze/full/jOwRwON) to play the game.
-<br><hr>
+<br>
 
-<img style="height: 500px text-align: center" src="SS01.png"><hr>
-<img style="height: 500px text-align: center" src="SS02.png"><hr>
+<!-- <hr><img style="height: 500px text-align: center" src="SS01.png"><hr>
+<img style="height: 500px text-align: center" src="SS02.png"><hr> -->
