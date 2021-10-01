@@ -61,20 +61,16 @@
         while (remainingLetters > 0 && triesAllowed > 0) {  
             
             var triesMsg = "\n\nYou have " + triesAllowed + " tries remaining.";        
-            
             var guess = prompt(hint + answerArray.join(' ') + "\n\nGuess a letter, or click Cancel to quit playing." + triesMsg);
             
             if (guess == null) 
                 break;
-
             else if (guess.length != 1)
                 alert("Please enter a single letter.");
-        
             else {
                 triesAllowed--;
                 if (answerArray.indexOf(guess) > -1)
                     alert("You've already guessed '" + guess + "'");
-    
                 else {
                     if (word.includes(guess)) {
                         for (let i = 0; i < word.length; i++) {
@@ -84,15 +80,15 @@
                             }
                         }
                     }
-                    else
+                    else {
                         alert("Wrong guess!");
+                    }
                 }
             }
         }
 
         if (guess == null)
             alert("Goodbye!");
-
         else {
             var stat = "The answer was " + word + ".";
             if (answerArray.join('') === word)
@@ -100,8 +96,6 @@
             else
                 alert("Sorry, you ran out of tries allowed! " + stat);
         }
-
-    </script>
-    
+    </script>   
 </body>
 </html>
