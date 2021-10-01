@@ -48,9 +48,29 @@
             "jupiter",
             "venus"
         ];
+        
+        var misc = [
+            "sun", 
+            "moon", 
+            "star", 
+            "nebula",
+            "centaur",
+            "black hole",
+            "dwarf planet",
+            "plutoid",
+            "gas giant",
+            "minor planet",
+            "galaxy",
+            "comet",
+            "asteroid",
+            "meteoroid",
+            "meteorite",
+            "constellation",
+        ]
 
-        var word = planets[Math.floor(Math.random() * planets.length)];
-        // console.log(word);
+        celestialObj = mars.concat(planets);
+
+        var word = celestialObj[Math.floor(Math.random() * celestialObj.length)];
 
         var answerArray = []
         var triesAllowed = word.length + 2;
