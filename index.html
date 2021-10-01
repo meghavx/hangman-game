@@ -45,6 +45,14 @@
             }
         }
 
+        function showAnswer(word, ansArr) {
+            var stat = "The answer was " + word + ".";
+            if (ansArr.join('') === word)
+                return "Good job! You guessed it right! " + stat;
+            else
+                return "You ran out of total guesses allowed!\n" + stat;
+        }
+
         var planets = [
             "neptune",
             "saturn",
@@ -101,15 +109,11 @@
                 }
             }
         }
-
+        
         if (guess == null)
             alert("Goodbye!");
         else {
-            var stat = "The answer was " + word + ".";
-            if (ansArr.join('') === word)
-                alert("Good job! You guessed it right! " + stat);
-            else
-                alert("Sorry, you ran out of total no. of guesses allowed!\n" + stat);
+            alert(showAnswer(word, ansArr));
         }
     </script>
     
