@@ -11,4 +11,6 @@
 * No. of remaining guess is displayed to user at each guess prompt
 
 <br><hr><br><br>
-<img style="height: 500px text-align: center" src="Hangman.png">
+<img style="height: 500px text-align: center" src="SS01.png">
+<br>
+<img style="height: 500px text-align: center" src="SS02.png">
