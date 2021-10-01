@@ -1,33 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <link rel="stylesheet" href="./styles.css">
     <title>Hangman Game</title>
-    
-    <style>
-        body {
-            background-color: floralwhite;
-        }
-        p {
-            font-size: 44px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0px;
-            padding-bottom: 0%;
-            padding-left: 10px;
-        }
-        .gameName {
-            font-size: 80px;
-            color: darkslateblue;
-        }
-        .catface {
-            padding-left: 45px;
-            color: darkorange;
-            font-weight: bold;
-        }
-    </style>
+
 </head>
 <body>
     <br><br>
@@ -79,9 +60,13 @@
         }
 
         var hint = "\nHint: It's an astronomical object!  B-)\n\n"; 
-
-        while (remainingLetters > 0 && triesAllowed > 0) {          
-            guess = prompt(hint + answerArray.join(' ') + "\n\nGuess a letter, or click Cancel to quit playing.");
+        
+        while (remainingLetters > 0 && triesAllowed > 0) {  
+            
+            var triesMsg = "\nYou have " + triesAllowed + " tries remaining.\n";        
+            
+            guess = prompt(hint + answerArray.join(' ') + "\n\nGuess a letter, or click Cancel to quit playing." + triesMsg);
+            
             if (guess == null) {
                 break;
             }
@@ -118,9 +103,10 @@
                 alert("Good job! You guessed it right! " + stat);
             }
             else { 
-                alert("Sorry, you lost! " + stat);
+                alert("Sorry, you ran out of tries allowed! " + stat);
             }
         }
     </script>
+    
 </body>
 </html>
