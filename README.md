@@ -8,8 +8,7 @@
 
 #### Additional features added:
 * A common hint is provided to help the user guess the word
-* No. of tries allowed is limited to word length + 4
-* No. of remaining tries is displayed to user at each guess prompt
+* No. of remaining guess is displayed to user at each guess prompt
 
 <br><hr><br><br>
 <img style="height: 500px text-align: center" src="Hangman.png">
