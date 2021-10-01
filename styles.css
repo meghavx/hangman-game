@@ -1,0 +1,19 @@
+body {
+    background-color: floralwhite;
+}
+p {
+    font-size: 44px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px;
+    padding-bottom: 0%;
+    padding-left: 10px;
+}
+.gameName {
+    font-size: 80px;
+    color: darkslateblue;
+}
+.catface {
+    padding-left: 45px;
+    color: darkorange;
+    font-weight: bold;
+}
