@@ -49,28 +49,34 @@
         astroObj = misc.concat(planets);
 
         var word = astroObj[Math.floor(Math.random() * astroObj.length)];
-        var hint = "\nHint: It's an astronomical object!\n\n";
-        
+
         var remainingLetters = word.length;
-        var triesAllowed = word.length + 4;
+        var guessedAllowed = word.length + 4;
         
         var answerArray = []
-        for (let i = 0; i < word.length; i++)
-            answerArray[i] = '__'; 
+        for (let i = 0; i < word.length; i++) {
+            answerArray[i] = '__';
+        }
+
+        var hint = "\nHint: It's an astronomical object!\n\n"; 
         
-        while (remainingLetters > 0 && triesAllowed > 0) {  
+        while (remainingLetters > 0 && guessedAllowed > 0) {  
             
-            var triesMsg = "\n\nYou have " + triesAllowed + " tries remaining.";        
+            var triesMsg = "\n\nYou have " + guessedAllowed + " tries remaining.";        
+            
             var guess = prompt(hint + answerArray.join(' ') + "\n\nGuess a letter, or click Cancel to quit playing." + triesMsg);
             
             if (guess == null) 
                 break;
+
             else if (guess.length != 1)
                 alert("Please enter a single letter.");
+        
             else {
-                triesAllowed--;
+                guessedAllowed--;
                 if (answerArray.indexOf(guess) > -1)
                     alert("You've already guessed '" + guess + "'");
+    
                 else {
                     if (word.includes(guess)) {
                         for (let i = 0; i < word.length; i++) {
@@ -89,6 +95,7 @@
 
         if (guess == null)
             alert("Goodbye!");
+
         else {
             var stat = "The answer was " + word + ".";
             if (answerArray.join('') === word)
@@ -96,6 +103,8 @@
             else
                 alert("Sorry, you ran out of tries allowed! " + stat);
         }
-    </script>   
+
+    </script>
+    
 </body>
 </html>
