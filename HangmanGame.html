@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Hangman Game</title>
+    
     <style>
         body {
             background-color: floralwhite;
@@ -20,12 +22,20 @@
             font-size: 80px;
             color: darkslateblue;
         }
+        .catface {
+            padding-left: 45px;
+            color: darkorange;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
-    <p>Welcome to</p> 
-    <p class="gameName">HANGMAN</p>
-    <p class="gameName">GAME</p>
+    <br><br>
+    <p> Welcome to </p> 
+    <p class="gameName"> HANGMAN </p>
+    <p class="gameName"> GAME </p>
+    <br><br>
+    <p class="catface"> =^.^= </p>
 
     <script>
         var planets = [
@@ -47,11 +57,10 @@
         var remainingLetters = word.length;
         var guess;
 
-        for (let i = 0; i < word.length; i++)
+        for (let i = 0; i < word.length; i++) {
             answerArray[i] = '__';
+        }
 
-        // console.log(answerArray.join(' '));
-        
         while (remainingLetters > 0 && triesAllowed > 0) {           
             guess = prompt(answerArray.join(' ') + "\n\nGuess a letter, or click Cancel to quit playing.");
             if (guess == null) {
@@ -62,8 +71,9 @@
             }
             else {
                 triesAllowed--;
-                if (answerArray.indexOf(guess) > -1)
+                if (answerArray.indexOf(guess) > -1) {
                     alert("You've already guessed '" + guess + "'");
+                }
                 else {
                     if (word.includes(guess)) {
                         for (let i = 0; i < word.length; i++) {
@@ -74,7 +84,7 @@
                         }
                     }
                     else {
-                        alert("Wrong guess, sorry!");
+                        alert("Wrong guess!");
                     }
                 }
             }
@@ -84,13 +94,14 @@
             alert("Goodbye!");
         }
         else {
-            var stat = "The answer was " + word;
-            if (answerArray.join('') === word)
+            var stat = "The answer was " + word + ".";
+            if (answerArray.join('') === word) {
                 alert("Good job! You guessed it right! " + stat);
-            else 
+            }
+            else { 
                 alert("Sorry, you lost! " + stat);
+            }
         }
-
     </script>
 </body>
 </html>
