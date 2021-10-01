@@ -31,11 +31,11 @@
 </head>
 <body>
     <br><br>
-    <p> Welcome to </p> 
-    <p class="gameName"> HANGMAN </p>
-    <p class="gameName"> GAME </p>
+    <p>Welcome to</p> 
+    <p class="gameName">HANGMAN</p>
+    <p class="gameName">GAME</p>
     <br><br>
-    <p class="catface"> =^.^= </p>
+    <p class="catface">=^.^=</p>
 
     <script>
         var planets = [
@@ -48,18 +48,15 @@
             "jupiter",
             "venus"
         ];
-        
+
         var misc = [
             "sun", 
             "moon", 
             "star", 
             "nebula",
             "centaur",
-            "black hole",
-            "dwarf planet",
+            "blackhole",
             "plutoid",
-            "gas giant",
-            "minor planet",
             "galaxy",
             "comet",
             "asteroid",
@@ -68,12 +65,12 @@
             "constellation",
         ]
 
-        celestialObj = mars.concat(planets);
+        astroObj = misc.concat(planets);
 
-        var word = celestialObj[Math.floor(Math.random() * celestialObj.length)];
+        var word = astroObj[Math.floor(Math.random() * astroObj.length)];
 
         var answerArray = []
-        var triesAllowed = word.length + 2;
+        var triesAllowed = word.length + 4;
         var remainingLetters = word.length;
         var guess;
 
@@ -81,8 +78,10 @@
             answerArray[i] = '__';
         }
 
-        while (remainingLetters > 0 && triesAllowed > 0) {           
-            guess = prompt(answerArray.join(' ') + "\n\nGuess a letter, or click Cancel to quit playing.");
+        var hint = "\nHint: It's an astronomical object!  B-)\n\n"; 
+
+        while (remainingLetters > 0 && triesAllowed > 0) {          
+            guess = prompt(hint + answerArray.join(' ') + "\n\nGuess a letter, or click Cancel to quit playing.");
             if (guess == null) {
                 break;
             }
