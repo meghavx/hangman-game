@@ -49,35 +49,32 @@
         astroObj = misc.concat(planets);
 
         var word = astroObj[Math.floor(Math.random() * astroObj.length)];
-
-        var answerArray = []
-        var triesAllowed = word.length + 4;
+        var hint = "\nHint: It's an astronomical object!\n\n";
+        
         var remainingLetters = word.length;
-        var guess;
-
-        for (let i = 0; i < word.length; i++) {
-            answerArray[i] = '__';
-        }
-
-        var hint = "\nHint: It's an astronomical object!  B-)\n\n"; 
+        var triesAllowed = word.length + 4;
+        
+        var answerArray = []
+        for (let i = 0; i < word.length; i++)
+            answerArray[i] = '__'; 
         
         while (remainingLetters > 0 && triesAllowed > 0) {  
             
-            var triesMsg = "\nYou have " + triesAllowed + " tries remaining.\n";        
+            var triesMsg = "\n\nYou have " + triesAllowed + " tries remaining.";        
             
-            guess = prompt(hint + answerArray.join(' ') + "\n\nGuess a letter, or click Cancel to quit playing." + triesMsg);
+            var guess = prompt(hint + answerArray.join(' ') + "\n\nGuess a letter, or click Cancel to quit playing." + triesMsg);
             
-            if (guess == null) {
+            if (guess == null) 
                 break;
-            }
-            else if (guess.length != 1) {
+
+            else if (guess.length != 1)
                 alert("Please enter a single letter.");
-            }
+        
             else {
                 triesAllowed--;
-                if (answerArray.indexOf(guess) > -1) {
+                if (answerArray.indexOf(guess) > -1)
                     alert("You've already guessed '" + guess + "'");
-                }
+    
                 else {
                     if (word.includes(guess)) {
                         for (let i = 0; i < word.length; i++) {
@@ -87,25 +84,23 @@
                             }
                         }
                     }
-                    else {
+                    else
                         alert("Wrong guess!");
-                    }
                 }
             }
         }
 
-        if (guess == null) {
+        if (guess == null)
             alert("Goodbye!");
-        }
+
         else {
             var stat = "The answer was " + word + ".";
-            if (answerArray.join('') === word) {
+            if (answerArray.join('') === word)
                 alert("Good job! You guessed it right! " + stat);
-            }
-            else { 
+            else
                 alert("Sorry, you ran out of tries allowed! " + stat);
-            }
         }
+
     </script>
     
 </body>
