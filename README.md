@@ -7,10 +7,11 @@
 <br>
 
 #### Additional features added:
-* A common hint is provided to help the user guess the word
-* No. of remaining guess is displayed to user at each guess prompt
+* Common hint provided to help the user guess the word
+* No. of remaining guesses is displayed at each guess prompt
 
-<br><hr><br><br>
+<br><hr>
 <img style="height: 500px text-align: center" src="SS01.png">
-<br>
+<hr>
 <img style="height: 500px text-align: center" src="SS02.png">
+<hr>
