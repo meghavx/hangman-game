@@ -22,7 +22,7 @@ function updateGameState(guess, word, ansArr) {
   	for (let i = 0; i < word.length; i++) {
     	if (word[i] === guess) {
       		ansArr[i] = guess;
-      	remainingLetters--;
+      		remainingLetters--;
     	}
   	}
 }
@@ -70,7 +70,7 @@ astroObj = misc.concat(planets);
 
 var word = pickWord(astroObj);
 var remainingLetters = word.length;
-var totalGuesses = word.length + 4;
+var totalGuesses = word.length + 7;
 var ansArr = setupAnsArr(word.length);
 var hint = "\nHint: It's an astronomical object!\n\n";
 
@@ -98,8 +98,7 @@ while (remainingLetters > 0 && totalGuesses > 0) {
 
 
 if (guess == null)
-  	alert("Goodbye!");
-else {
+	alert("Goodbye!");
+else
   	alert(showAnswer(word, ansArr));
-}
 
